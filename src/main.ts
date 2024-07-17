@@ -5,7 +5,7 @@ import { envs } from './config';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
-  const logger = new Logger('Payments-MS');
+  const logger = new Logger('Payments Microservice');
   const app = await NestFactory.create(AppModule, {
     rawBody: true,
   });
@@ -27,6 +27,6 @@ async function bootstrap() {
 
   await app.listen(envs.port);
 
-  logger.log(`Payments Microservice running on port ${envs.port}`);
+  logger.log(`Payments Microservice is up and running`);
 }
 bootstrap();
